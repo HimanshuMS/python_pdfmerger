@@ -7,7 +7,7 @@ def main(argv):
     inputfile = ''
     outputfile = ''
     try:
-        opts, args = getopt.getopt(argv, "hi:o:", ["ifile=", "ofile="])
+        opts, _ = getopt.getopt(argv, "hi:o:", ["ifile=", "ofile="])
     except:
         print("pdfmerger.py -i \"<inputfile_1> <inputfile_2> ... <inputfile_n>\" -o <outputfile>")
         sys.exit()
@@ -16,6 +16,7 @@ def main(argv):
         if opt == '-h':
             print("pdfmerger.py -i \"<inputfile_1> <inputfile_2> ... <inputfile_n>\" -o <outputfile>")
             sys.exit()
+
         elif opt in ("-i", "--ifile"):
             inputfile = arg
             for items in inputfile.split():
